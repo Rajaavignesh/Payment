@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#"> Demo App </a>
+      </div>
+    </nav>
+
+    <div class="card m-5">
+      <div class="card-header">Order overview</div>
+      <div class="card-body">
+        <div class="input-group mb-3 mt-3">
+          <span class="input-group-text">Customer First Name</span>
+          <input type="text"name="customerName" aria-label="Customer Name" class="form-control"
+          id="customer_first_name" />
+        </div>
+
+        <div class="input-group mb-3 mt-3">
+          <span class="input-group-text">Customer Last Name</span>
+          <input type="text"name="customerName" aria-label="Customer Name" class="form-control"
+          id="customer_last_name" />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Amount</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Dollar amount (with dot and two decimal places)"
+            id="currency"
+          />
+        </div>
+        <select class="form-select mb-3" aria-label="Currency" id="currency_type">
+          <option selected>Currency Type</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="THB">THB</option>
+          <option value="HKD">HKD</option>
+          <option value="SGD">SGD</option>
+          <option value="AUD">AUD</option>
+        </select>
+        <div class="mx-auto">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Pay & Continue
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+      <form method="post" id="cityform"> 
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Credit Card Details
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3 mt-3">
+              <span class="input-group-text">Card Holder Name</span>
+              <input
+                type="text"
+                aria-label="Card Holder Name"
+                required
+                class="form-control"
+                id="name"
+              />
+            </div>
+            <div class="input-group mb-3 mt-3">
+              <span class="input-group-text">Card Number</span>
+              <input
+                type="text"
+                name="card_number"
+                aria-label="Card Number"
+                maxlength="16"
+                class="form-control"
+                id="card_number"
+
+              />
+            </div>
+
+            <div class="inputBox" style="display: inline-block">
+              <span class="input-group-text" style="width: 130px"
+                >expiration mm</span
+              >
+                <select class="inputBox mb-3 mt-3" aria-label="expiration mm" 
+                id="exp_mm"
+                >
+                <option value="month" select disabled>month</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                
+              </select>
+
+              <span class="input-group-text" style="width: 130px"
+                >expiration year</span
+              >
+              <select class="inputBox mb-3 mt-3" aria-label="expiration year" 
+              id="exp_year"
+              >
+                <option value="year" select disabled>year</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+                <option value="2031">2031</option>
+                <option value="2032">2032</option>
+                <option value="2033">2033</option>
+                <option value="2034">2034</option>
+                <option value="2035">2035</option>
+              </select>
+            </div>
+
+            <div class="inputBox" style="display: inline-block">
+              <span class="input-group-text" style="width: 130px"
+                >card type</span
+              >
+              <select class="inputBox mb-3 mt-3" aria-label="card type" 
+              id="card_type"
+              >
+                <option value="type" select disabled>card type</option>
+                <option value="AMEX">AMEX</option>
+                <option value="VISA">VISA</option>
+              </select>
+            </div>
+
+            <div class="input-group mb-3 mt-3">
+              <span class="input-group-text">CCV</span>
+              <input
+                type="text"
+                aria-label="CCV"
+                maxlength="4"
+                class="form-control"
+                id="cvv"
+
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://js.braintreegateway.com/web/dropin/1.36.1/js/dropin.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      var name =  document.getElementById('name').value
+      var cvv =  document.getElementById('cvv').value
+      var exp_year =  document.getElementById('exp_year').value
+      var exp_mm =  document.getElementById('exp_mm').value
+      var card_number =  document.getElementById('cardNumber').value
+      var customer_first_name =  document.getElementById('customer_first_name').value
+      var customer_last_name =  document.getElementById('customer_last_name').value
+      var type =  document.getElementById('currency_type').value
+      var amount =  document.getElementById('currency').value
+      var card_type =  document.getElementById('card_type').value
+
+      $("#cityform").submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+              url: "http://localhost:5500/process_payment",
+              type: "POST",
+              data: {
+                  'card_number': card_number,
+                  'card_type': card_type,
+                  'expire_month':exp_mm,
+                  'expire_year':exp_year,
+                  'cvv2':cvv,
+                  'amount':amount,
+                  'currency':type,
+                  'customer_first_name':customer_first_name,
+                  'customer_last_name':customer_last_name,
+                  'card_holder_name':name
+              },
+              success: function(data){
+                  console.log(data);
+              }
+          });
+      });
+  
+  </script>
+  </body>
+</html>
