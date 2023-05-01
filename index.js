@@ -111,6 +111,7 @@ app.post("/process_payment", upload.array(), async (req, res) => {
     res.status(400).send("AMEX is possible to use only for USD");
   }
 
+
   if (
     cardData.type === "American Express" &&
     (req.body.currency === "USD" ||
@@ -164,11 +165,7 @@ app.post("/process_payment", upload.array(), async (req, res) => {
       }
     });
   } else {
-    // if (req.body.currency !== "USD" && cardData.type === "AMEX") {
-    //   // Return error message
-    //   res.status(400).send("AMEX is possible to use only for USD");
-    // } else {
-    // Use Braintree
+       // Use Braintree
 
     console.log("Payment processed using Braintree");
 
@@ -226,6 +223,10 @@ app.post("/process_payment", upload.array(), async (req, res) => {
     // }
   }
 });
+
+
+
+
 
 //test payment Paypal
 app.post("/create-payment", function (req, res) {

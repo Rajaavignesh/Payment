@@ -131,6 +131,7 @@
     </div>
   </div>
   </form>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
@@ -146,7 +147,8 @@
     var customer_last_name = document.getElementById('customer_last_name').value
     var type = document.getElementById('currency_type').value
     var amount = document.getElementById('currency').value
-    var card_type = document.getElementById('card_type').value
+    // var card_type = document.getElementById('card_type').value
+
 
     $(document).ready(function() {
   $('#payment-form').submit(function(e) {
@@ -154,7 +156,7 @@
 
       var formData = {
         card_number: cardNo,
-        card_type: card_type,
+        // card_type: card_type,
         expire_month: exp_mm,
         expire_year: exp_year,
         cvv2: cvv,
@@ -165,6 +167,7 @@
         card_holder_name: name
       }
 
+
       console.log(formData)
       // send form data to server
       $.ajax({
@@ -174,7 +177,7 @@
         // contentType: 'json',
         success: function (response) {
           console.log("response", response);
-          alert('Payment processed successfully!');
+          alert("Payment processed successfully!");
         },
         error: function (error) {
           console.log("---Error----",error);
